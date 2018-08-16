@@ -245,8 +245,7 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
      * @param encodingType           Compression quality hint (0-100: 0=low quality & high compression, 100=compress of max quality)
      */
     public void callTakePicture(int returnType, int encodingType) {
-        boolean saveAlbumPermission = PermissionHelper.hasPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
-                && PermissionHelper.hasPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        boolean saveAlbumPermission = PermissionHelper.hasPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE);
         boolean takePicturePermission = PermissionHelper.hasPermission(this, Manifest.permission.CAMERA);
 
         // CB-10120: The CAMERA permission does not need to be requested unless it is declared
